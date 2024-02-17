@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `assignment`
 --
 
+CREATE DATABASE IF NOT EXISTS unirome;
+
 CREATE TABLE `assignment` (
   `assignment_no` int(2) NOT NULL,
   `st_id` varchar(10) NOT NULL,
@@ -362,6 +364,7 @@ ALTER TABLE `sessional`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT,
   ADD PRIMARY KEY (`id`);
 
 --

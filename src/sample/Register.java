@@ -11,15 +11,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.util.ResourceBundle;
 
 public class Register {
     @FXML
@@ -36,12 +32,11 @@ public class Register {
     @FXML
     void fd_register(MouseEvent event) throws SQLException, IOException {
         String username, password, fname, lname;
-        DatePicker dob= new DatePicker();
         password = fd_pass.getText();
         username = fd_user.getText();
         fname = fd_fname.getText();
         lname = fd_lname.getText();
-        LocalDate dobe=dob.getValue();
+        LocalDate dobe=fd_date.getValue();
 
         Connection connection=sqliteConnection.dbConnector();
         Statement statement = connection.createStatement();

@@ -43,12 +43,11 @@ public class users implements Initializable {
     @FXML
     void fd_register(MouseEvent event) throws SQLException, IOException {
         String username, password, fname, lname;
-        DatePicker dob= new DatePicker();
         password = fd_pass.getText();
         username = fd_user.getText();
         fname = fd_fname.getText();
         lname = fd_lname.getText();
-        String dobe=dob.getValue().toString();
+        LocalDate dobe=fd_date.getValue();
     if(!username.isEmpty() ||!password.isEmpty()||!fname.isEmpty()||!lname.isEmpty()) {
     Connection connection = sqliteConnection.dbConnector();
     Statement statement = connection.createStatement();
